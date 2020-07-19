@@ -13,6 +13,15 @@ The scope of this project will be to build a data ware house on AWS that will he
 * Airport Code Table: This is a simple table of airport codes and corresponding cities. It comes from here.
 
 
+# Architecture
+Data are uploaded to Amazon S3. AWS will act as the data lake where all raw files are stored. Data will then be loaded to staging tables on Amazon Redshift. The ETL process will take data from those staging tables and create data mart tables. An Airflow instance can be deployed on a Google Compute Engine or locally to orchestrate the pipeline.
+
+Here are the justifications for the technologies used:
+
+* Amazon S3: act as the data lake, vertically scalable.
+* Amazon Redshift: act as data base engine for data warehousing, data mart and ETL processes. BigQuery is a serverless solution that can easily and effectively process petabytes scale dataset.
+* Apache Airflow: orchestrate the workflow by issuing command line to load data to BigQuery or SQL queries for ETL process. Airflow does not have to process any data by itself, thus allowing the architecture to scale.
+
 ## ETL Flow
 * Data Collected from the API is moved to landing zone s3 buckets.
 * ETL job has s3 module which copies data from landing zone to working zone.
@@ -23,7 +32,6 @@ The scope of this project will be to build a data ware house on AWS that will he
 * Airflow DAG runs the data quality check on all Warehouse tables once the ETL job execution is completed.
 * Airflow DAG has Analytics queries configured in a Custom Designed Operator. These queries are run and again a Data Quality Check is done on some selected Analytics Table.
 * Dag execution completes after these Data Quality check.
-
 
 ## Environment Setup
 Hardware Used
