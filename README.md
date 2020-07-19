@@ -7,10 +7,10 @@ This project creates a data lake on Amazon Web Services with main focus on build
 The scope of this project will be to build a data ware house on AWS that will help answer common business questions as well as powering dashboards. To do that, a conceptual data model and a data pipeline will be defined.
 
 ### Data sources
-* I94 Immigration Data: This data comes from the US National Tourism and Trade Office.
+* I94 Immigration Data: This data comes from the [US National Tourism and Trade Office](https://travel.trade.gov/research/reports/i94/historical/2016.html).
 * I94 Data dictionary: Dictionary accompanies the I94 Immigration Data
-* U.S. City Demographic Data: This data comes from OpenSoft. You can read more about it here.
-* Airport Code Table: This is a simple table of airport codes and corresponding cities. It comes from here.
+* U.S. City Demographic Data: This data comes from OpenSoft. You can read more about it [here](https://public.opendatasoft.com/explore/dataset/us-cities-demographics/export/).
+* Airport Code Table: This is a simple table of airport codes and corresponding cities. It comes from [here](https://datahub.io/core/airport-codes#data).
 
 
 ### Architecture
