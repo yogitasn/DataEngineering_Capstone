@@ -1,19 +1,19 @@
 # DataEngineering_Capstone
 
-## Project Summary
+### Project Summary
 This project creates a data lake on Amazon Web Services with main focus on building a data warehouse and data pipeline. The data lake is built around the I94 Immigration data provided by the US government. The data warehouse will help US official to analyze immigration patterns to understand what factors drive people to move and also can be used for tourism purpose.
  
-## Project Scopes
+### Project Scopes
 The scope of this project will be to build a data ware house on AWS that will help answer common business questions as well as powering dashboards. To do that, a conceptual data model and a data pipeline will be defined.
 
-## Data sources
+### Data sources
 * I94 Immigration Data: This data comes from the US National Tourism and Trade Office.
 * I94 Data dictionary: Dictionary accompanies the I94 Immigration Data
 * U.S. City Demographic Data: This data comes from OpenSoft. You can read more about it here.
 * Airport Code Table: This is a simple table of airport codes and corresponding cities. It comes from here.
 
 
-# Architecture
+### Architecture
 Data are uploaded to Amazon S3. AWS will act as the data lake where all raw files are stored. Data will then be loaded to staging tables on Amazon Redshift. The ETL process will take data from those staging tables and create data mart tables. An Airflow instance can be deployed on a Google Compute Engine or locally to orchestrate the pipeline.
 
 Here are the justifications for the technologies used:
@@ -22,7 +22,7 @@ Here are the justifications for the technologies used:
 * Amazon Redshift: act as data base engine for data warehousing, data mart and ETL processes. BigQuery is a serverless solution that can easily and effectively process petabytes scale dataset.
 * Apache Airflow: orchestrate the workflow by issuing command line to load data to BigQuery or SQL queries for ETL process. Airflow does not have to process any data by itself, thus allowing the architecture to scale.
 
-## ETL Flow
+### ETL Flow
 * Data Collected from the API is moved to landing zone s3 buckets.
 * ETL job has s3 module which copies data from landing zone to working zone.
 * Once the data is moved to working zone, spark job is triggered which reads the data from working zone and apply transformation. Dataset is repartitioned and moved to the    Processed Zone.
@@ -33,6 +33,6 @@ Here are the justifications for the technologies used:
 * Airflow DAG has Analytics queries configured in a Custom Designed Operator. These queries are run and again a Data Quality Check is done on some selected Analytics Table.
 * Dag execution completes after these Data Quality check.
 
-## Environment Setup
+### Environment Setup
 Hardware Used
 EMR - I used a 3 node cluster with below Instance Types:
