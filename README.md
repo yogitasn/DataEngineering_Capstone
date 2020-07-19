@@ -35,5 +35,5 @@ Here are the justifications for the technologies used:
 ### Environment Setup
 Hardware Used
 EMR - I used a 3 node cluster with below Instance Types:
-I think you should use an
-`<addr>` element here instead.
+> I think you should use an
+> element here instead.
