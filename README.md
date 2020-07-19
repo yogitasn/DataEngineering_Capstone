@@ -35,5 +35,12 @@ Here are the justifications for the technologies used:
 ### Environment Setup
 Hardware Used
 EMR - I used a 3 node cluster with below Instance Types:
-> I think you should use an
-> element here instead.
+> m5.xlarge
+> 4 vCore, 16 GiB memory, EBS only storage
+> EBS Storage:64 GiB
+
+Redshift: For Redshift I used 2 Node cluster with Instance Types dc2.large
+
+Airflow
+> Using local airflow workspace 
+
